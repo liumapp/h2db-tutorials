@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.liumapp.tutorials.h2db</groupId>
-  <artifactId>spring-boot-dubbo-tutorials</artifactId>
+  <artifactId>h2db-tutorials</artifactId>
   <packaging>pom</packaging>
   <version>v1.0.0</version>
 
-  <name>spring-boot-dubbo-tutorials</name>
+  <name>h2db-tutorials</name>
   <url>http://maven.apache.org</url>
 
   <developers>
@@ -36,18 +36,10 @@
       <artifactId>lombok</artifactId>
       <version>1.16.20</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba.spring.boot</groupId>
-      <artifactId>dubbo-spring-boot-starter</artifactId>
-      <version>2.0.0</version>
-    </dependency>
+    </dependency> 
   </dependencies>
 
   <modules>
-    <module>dubbo-services</module>
-    <module>dubbo-provider</module>
-    <module>dubbo-consumer</module>
   </modules>
 
 </project>
