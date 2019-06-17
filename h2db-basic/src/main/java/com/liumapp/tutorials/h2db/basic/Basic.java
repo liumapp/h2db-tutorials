@@ -54,4 +54,16 @@ public class Basic
             e.printStackTrace();
         }
     }
+
+    public boolean checkTable () {
+        return false;
+    }
+
+    public boolean initTable () {
+        return false;
+    }
+
+    public boolean selectTable () {
+        return false;
+    }
 }
