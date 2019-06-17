@@ -29,22 +29,24 @@ public class Basic
         String query = "SELECT * FROM cars";
 
         try {
+            //注册JDBC驱动类
             Class.forName(JDBC_DRIVER);
-            File file = new File(Basic.class.getClassLoader().getResource("./cars.sql").getPath());
-            String sql = FileUtils.readFileToString(file);
-
-            Connection con = DriverManager.getConnection(url, user, passwd);
-            Statement st = con.createStatement();
-            //第一次执行查询之前，先插入sql生成scheme跟一些数据
-            if (!new File("./data/db/test_basic.mv.db").exists()) {
-                st.executeUpdate(sql);
+            //建立链接
+            Connection conn = DriverManager.getConnection(url, user, passwd);
+            Statement st = conn.createStatement();
+            //检查scheme是否存在，表名必须大写
+            if (!checkTable(conn, "CARS")) {
+                //不存在的话创建
+                initTable(st);
             }
-            ResultSet rs = st.executeQuery(query);
+            //查询cars这张表的数据
+            ResultSet rs = selectTable(st, query);
             while (rs.next()) {
                 System.out.printf("%d %s %d%n", rs.getInt(1),
                         rs.getString(2), rs.getInt(3));
             }
-
+            st.close();
+            conn.close();
         } catch (SQLException ex) {
             Logger lgr = Logger.getLogger(Basic.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
@@ -55,15 +57,23 @@ public class Basic
         }
     }
 
-    public boolean checkTable () {
+    public static boolean checkTable (Connection conn, String tableName) throws SQLException {
+        ResultSet rset = conn.getMetaData().getTables(null, null, tableName, null);
+        if (rset.next())
+        {
+            return true;
+        }
         return false;
     }
 
-    public boolean initTable () {
-        return false;
+    public static void initTable (Statement st) throws SQLException, IOException {
+        File file = new File(Basic.class.getClassLoader().getResource("./cars.sql").getPath());
+        String sql = FileUtils.readFileToString(file);
+        st.executeUpdate(sql);
     }
 
-    public boolean selectTable () {
-        return false;
+    public static ResultSet selectTable (Statement st, String query) throws SQLException {
+        ResultSet rs = st.executeQuery(query);
+        return rs;
     }
 }
