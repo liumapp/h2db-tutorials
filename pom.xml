@@ -40,6 +40,7 @@
   </dependencies>
 
   <modules>
+    <module>h2db-basic</module>
   </modules>
 
 </project>
