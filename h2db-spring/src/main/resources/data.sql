@@ -1,4 +1,3 @@
-CREATE TABLE cars(id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(150), price INT);
 INSERT INTO cars(name, price) VALUES('Audi', 52642);
 INSERT INTO cars(name, price) VALUES('Mercedes', 57127);
 INSERT INTO cars(name, price) VALUES('Skoda', 9000);
