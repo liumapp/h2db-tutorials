@@ -15,6 +15,12 @@ spring:
 
 * Drive Class: org.h2.Driver
 
-* JDBC URL: jdbc:h2:mem:test
+* JDBC URL: jdbc:h2:./data/db2/test_spring
+
+* username: sa
+       
+* password: password
+
+
 
 
