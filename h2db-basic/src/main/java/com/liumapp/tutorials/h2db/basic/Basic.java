@@ -23,7 +23,8 @@ public class Basic
      */
     public static void main( String[] args ) {
         String JDBC_DRIVER = "org.h2.Driver";
-        String url = "jdbc:h2:./data/db/test_basic";
+        String url = "jdbc:h2:./data/db/test_basic"; // persisted database 将数据保存在磁盘中，重启后依然存在
+//        String url = "jdbc:h2:mem:test_basic"; // in-memory database 将数据保存在内存中，重启后将会丢失
         String user = "sa";
         String passwd = "";
         String query = "SELECT * FROM cars";
@@ -61,8 +62,10 @@ public class Basic
         ResultSet rset = conn.getMetaData().getTables(null, null, tableName, null);
         if (rset.next())
         {
+            System.out.println("we found table named:" + tableName);
             return true;
         }
+        System.out.println("we do not found table named:" + tableName);
         return false;
     }
 
