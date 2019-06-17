@@ -46,6 +46,7 @@
 
   <modules>
     <module>h2db-basic</module>
+    <module>h2db-spring</module>
   </modules>
 
 </project>
