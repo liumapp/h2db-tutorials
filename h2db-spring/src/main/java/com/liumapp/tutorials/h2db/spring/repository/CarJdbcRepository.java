@@ -21,7 +21,7 @@ public class CarJdbcRepository {
     private JdbcTemplate template;
 
     public Car findById (Integer id) {
-        return template.queryForObject("select * from student where id=?", new Object[] {
+        return template.queryForObject("select * from cars where id=?", new Object[] {
                         id
                 },
                 new BeanPropertyRowMapper< Car >(Car.class));
