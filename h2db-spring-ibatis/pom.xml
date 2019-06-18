@@ -17,6 +17,7 @@
 
   <name>h2db-spring-ibatis</name>
   <url>http://maven.apache.org</url>
+
   <developers>
     <developer>
       <name>liumapp</name>
@@ -48,8 +49,9 @@
       <version>1.4.196</version>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-jdbc</artifactId>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>3.1.0</version>
     </dependency>
 
     <!--helper-->
