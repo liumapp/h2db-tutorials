@@ -13,10 +13,18 @@ import lombok.Data;
 @Data
 public class Car {
 
-    private Integer id;
+    private int id;
 
     private String name;
 
-    private Integer price;
+    private int price;
 
+    public Car() {
+    }
+
+    public Car(int id, String name, int price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 }
