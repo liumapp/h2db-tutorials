@@ -31,5 +31,6 @@ public class H2dbSpring implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         logger.info("Car id 6 -> {}", repository.findById(6));
+        logger.info("All car info -> {}", repository.findAll());
     }
 }
