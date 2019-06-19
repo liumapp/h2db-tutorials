@@ -1,4 +1,4 @@
-# spring-h2db-tutorials
+# h2db-tutorials
 
 H2是一个纯Java开发的嵌入式数据库，它可以作为内存数据库将数据保存在内存中，也可以持久化保存在硬盘中
 
