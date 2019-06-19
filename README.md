@@ -2,7 +2,15 @@
 
 H2是一个纯Java开发的嵌入式数据库，它可以作为内存数据库将数据保存在内存中，也可以持久化保存在硬盘中
 
-H2最主要的一个特征在于它足够轻，轻到只有一个jar包便可以启动
+H2最主要的一个特征在于它足够轻，轻到只用一个jar包便可以启动
+
+````mxml
+<dependency>
+  <groupId>com.h2database</groupId>
+  <artifactId>h2</artifactId>
+  <version>1.4.196</version>
+</dependency>
+````
 
 以Mysql为例，传统的数据库要启动一般包含下面几个步骤
 
@@ -41,17 +49,17 @@ Class.forName(JDBC_DRIVER);
 Connection conn = DriverManager.getConnection(url, user, passwd);
 ```` 
 
-如果要以Persisted Database模式启动，将url改为: ``` jdbc:h2:./data/db/test_base ``` 即可（更详细的代码请参考h2db-basic的代码）
+如果要以Persisted Database模式启动，将url改为: ``` jdbc:h2:./data/db/test_base ``` 即可（更详细的代码请参考[h2db-basic](https://github.com/liumapp/h2db-tutorials/tree/master/h2db-basic)的代码）
 
 注意这里的"./data/db/"表示操作系统的相对目录，test_base为数据库名
 
 除了上述直接用原生的写法之外，h2也可以在Spring Boot、Mybatis等框架下运行
 
-* h2在Spring Boot下的运行请参考h2db-spring的代码
+* h2在Spring Boot下的运行请参考[h2db-spring](https://github.com/liumapp/h2db-tutorials/tree/master/h2db-spring)的代码
 
-* h2在Spring Boot下结合Mybatis运行请参考h2db-spring-ibatis的代码
+* h2在Spring Boot下结合Mybatis运行请参考[h2db-spring-ibatis](https://github.com/liumapp/h2db-tutorials/tree/master/h2db-spring-ibatis)的代码
 
-* h2结合测试单元的使用案例请参考h2db-spring-ibatis的代码
+* h2结合测试单元的使用案例请参考[h2db-spring-ibatis](https://github.com/liumapp/h2db-tutorials/tree/master/h2db-spring-ibatis)的代码
 
 ## 参考链接
 
